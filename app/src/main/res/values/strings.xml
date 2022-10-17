@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">The Online Shop</string>
+    <string name="a_z">A-Z</string>
+    <string name="type">Type</string>
+    <string name="higher_price">Higher price</string>
+    <string name="lower_price">Lower price</string>
+    <string name="amount">Amount</string>
+</resources>
