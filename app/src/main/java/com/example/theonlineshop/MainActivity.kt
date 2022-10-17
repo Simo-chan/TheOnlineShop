@@ -39,8 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         val getByType:Button=findViewById(R.id.type_selection)
         getByType.setOnClickListener {
-            val sortedByType=productList.sortedBy { it.type }
-            productRecyclerAdapter.setData(sortedByType)
+            TODO()
         }
 
         val getHigherPrice: Button = findViewById(R.id.higher_price)
