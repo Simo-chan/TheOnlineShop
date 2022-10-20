@@ -8,13 +8,12 @@
     tools:context=".MainActivity">
 
     <HorizontalScrollView
-        android:id="@+id/button_scroll_view"
+        android:id="@+id/buttonScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -24,35 +23,35 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/alphabet_order"
+                android:id="@+id/alphabetOrder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="@string/a_z" />
 
             <Button
-                android:id="@+id/type_selection"
+                android:id="@+id/typeSelection"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="@string/type" />
 
             <Button
-                android:id="@+id/higher_price"
+                android:id="@+id/higherPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="@string/higher_price" />
 
             <Button
-                android:id="@+id/lower_price"
+                android:id="@+id/lowerPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="@string/lower_price" />
 
             <Button
-                android:id="@+id/amount_left"
+                android:id="@+id/amountLeft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -64,7 +63,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -73,10 +72,9 @@
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_scroll_view"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/buttonScrollView"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/items_of_recyclerview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,4 +5,5 @@
     <string name="higher_price">Higher price</string>
     <string name="lower_price">Lower price</string>
     <string name="amount">Amount</string>
+    <string name="price">price:</string>
 </resources>

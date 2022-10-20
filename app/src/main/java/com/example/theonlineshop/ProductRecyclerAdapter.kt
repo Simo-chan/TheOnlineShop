@@ -9,21 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ProductRecyclerAdapter : RecyclerView.Adapter<ProductRecyclerAdapter.ViewHolder>() {
 
-    private var dataSet = ArrayList<Product>()
+    var dataSet = emptyList<Product>()
+        set(value) {
+            val productDiffUtilCallback = ProductDiffUtilCallBack(dataSet, field)
+            val diffResult = DiffUtil.calculateDiff(productDiffUtilCallback)
+            diffResult.dispatchUpdatesTo(this)
+            field = value
+        }
 
-    fun setData(productArrayList: List<Product>) {
-        val productDiffUtilCallback = ProductDiffUtilCallBack(dataSet, productArrayList)
-        val diffResult = DiffUtil.calculateDiff(productDiffUtilCallback)
-        dataSet.clear()
-        dataSet.addAll(productArrayList)
-        diffResult.dispatchUpdatesTo(this)
-
-    }
-
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val bigText: TextView = itemView.findViewById(R.id.biggerText)
-        val smallText: TextView = itemView.findViewById(R.id.smallerText)
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context)
@@ -35,11 +28,17 @@ class ProductRecyclerAdapter : RecyclerView.Adapter<ProductRecyclerAdapter.ViewH
         return dataSet.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val product = dataSet[position]
-        holder.bigText.text = product.name
-        holder.smallText.text =
-            "${product.type}, price:${product.price}€, amount left:${product.quantity}"
-    }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) =
+        holder.bind(dataSet[position])
 
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val title: TextView = itemView.findViewById(R.id.title)
+        private val subtitle: TextView = itemView.findViewById(R.id.subtitle)
+
+        fun bind(product: Product) {
+            title.text = product.name
+            subtitle.text =
+                "${product.type}, @+id/price:${product.price}€, amount left:${product.quantity}"
+        }
+    }
 }
