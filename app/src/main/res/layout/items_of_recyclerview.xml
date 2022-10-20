@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -13,17 +14,19 @@
         android:padding="5dp">
 
         <TextView
-            android:id="@+id/biggerText"
-            android:layout_width="wrap_content"
+            android:id="@+id/title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="Title" />
 
         <TextView
-            android:id="@+id/smallerText"
-            android:layout_width="wrap_content"
+            android:id="@+id/subtitle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="Subtitle" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

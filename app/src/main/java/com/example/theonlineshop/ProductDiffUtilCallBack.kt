@@ -4,11 +4,12 @@ import androidx.recyclerview.widget.DiffUtil
 import kotlin.math.sign
 
 class ProductDiffUtilCallBack(
-    private val oldList: List<Product>, private val newList: List<Product>
+    private val oldList: List<Product>,
+    private val newList: List<Product>
 ) : DiffUtil.Callback() {
-    override fun getOldListSize(): Int = oldList.size
+    override fun getOldListSize() = oldList.size
 
-    override fun getNewListSize(): Int = newList.size
+    override fun getNewListSize() = newList.size
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
         newList[newItemPosition].id == oldList[oldItemPosition].id
